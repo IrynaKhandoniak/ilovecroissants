@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FLIX — Study & Diversity</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+  :root{
+    --navy:#1e2a3d;
+    --gold:#caa441;
+    --ink:#0e1320;
+    --muted:#7b86a1;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:#fff;
+    color:var(--ink);
+  }
+
+  /* ----------- Section ----------- */
+  .cta-section{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    color:#fff;
+    overflow:hidden;
+    background:
+      linear-gradient(to right, rgba(14,19,32,0.9) 0%, rgba(14,19,32,0.65) 45%, rgba(14,19,32,0.2) 100%),
+      url("images/people.png") center/cover no-repeat;
+  }
+
+  .cta-content{
+    padding-left:7vw;
+    max-width:560px;
+    z-index:2;
+  }
+
+  .cta-content span{
+    display:inline-block;
+    padding:6px 14px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.03em;
+    margin-bottom:16px;
+    backdrop-filter:blur(6px);
+  }
+
+  .cta-content h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(32px,5vw,56px);
+    line-height:1.15;
+    font-weight:700;
+    margin-bottom:16px;
+    text-shadow:0 4px 12px rgba(0,0,0,.4);
+  }
+
+  .cta-content p{
+    font-size:clamp(15px,1.6vw,18px);
+    line-height:1.6;
+    opacity:.95;
+    margin-bottom:28px;
+    text-shadow:0 2px 8px rgba(0,0,0,.5);
+  }
+
+  .cta-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:16px;
+    padding:14px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    transition:.3s ease;
+  }
+  .cta-btn:hover{
+    background:#b89339;
+    color:#fff;
+  }
+
+  @media (max-width: 900px){
+    .cta-section{justify-content:center;text-align:center;padding:0 6vw;}
+    .cta-content{padding-left:0;}
+  }
+</style>
+</head>
+
+<body>
+  <section class="cta-section">
+    <div class="cta-content">
+      <span>University of Greenwich • London</span>
+      <h1>Study at Greenwich, where diversity drives discovery</h1>
+      <p>  
+      Diversity is not just a value — it’s what shapes every idea, project, and success story on our campus.</p>
+      <a href="#" class="cta-btn">Book an Open Day</a>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FLIX Creative Brief — University of Greenwich</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<!-- html2canvas for screenshot -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<style>
+  :root{
+    --navy:#1e2a3d;
+    --gold:#caa441;
+    --ink:#0e1320;
+    --muted:#7b86a1;
+    --surface:#ffffff;
+    --card:#f7f8fb;
+    --line:#e7eaf0;
+    --shadow:0 18px 40px rgba(13,19,33,.15);
+    --radius:18px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:var(--ink);
+    background:#fff;
+  }
+
+   #screenshot-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(202,164,65,0.55); /* soft gold transparency */
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 8px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    opacity: 0.8;
+  }
+  #screenshot-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    opacity: 1;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    height:55vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:60px 7vw;
+    color:#fff;
+    background:linear-gradient(to bottom, rgba(10,14,24,0.45) 0%, rgba(10,14,24,0.8) 75%, rgba(10,14,24,0.9) 100%), url("images/compas.jpeg") center/cover no-repeat;
+    overflow:hidden;
+  }
+
+  .brandbar{position:absolute; top:30px; left:7vw; display:flex; align-items:center; gap:16px;}
+  .brandbar img.logo{height:54px; width:auto; display:block; object-fit:contain; filter:drop-shadow(0 6px 16px rgba(0,0,0,.3));}
+  .brandbar .wordmark{font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.06em; font-size:28px; color:#fff;}
+  .brandbar .agency{margin-top:2px; color:var(--gold); font-weight:700; letter-spacing:.28em; font-size:11px; text-transform:uppercase;}
+
+  .hero-content{max-width:700px; z-index:2;}
+  .pill{display:inline-block; padding:8px 16px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(6px); font-weight:600; letter-spacing:.02em; font-size:14px;}
+  .hero h1{font-family:"Playfair Display",serif; font-size:clamp(30px,5vw,46px); line-height:1.2; margin:12px 0; color:#fff; text-shadow:0 4px 14px rgba(0,0,0,.6);}
+  .hero p.kicker{margin:0 0 22px; font-weight:500; opacity:.95; font-size:clamp(15px,2vw,18px); text-shadow:0 2px 8px rgba(0,0,0,.5);}
+
+  /* ---------- GRID ---------- */
+  .wrap{padding:50px 7vw 80px; background:linear-gradient(#fff,#f9fafd)}
+  .grid{display:grid; gap:24px; grid-template-columns: repeat(12, 1fr);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
+  .span-6{grid-column: span 6}
+  .span-12{grid-column: 1 / -1}
+  h2{margin:0 0 10px; font-size:18px; letter-spacing:.02em; color:var(--navy); font-weight:800; text-transform:uppercase}
+  p{margin:0 0 10px}
+  .em{color:var(--muted)}
+  .chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 12px; font-weight:600; font-size:13px;}
+
+  /* ---------- Main Message ---------- */
+  .main-message{
+    background:var(--gold);
+    color:#0c101a;
+    border:1px solid #b89339;
+    border-radius:22px;
+    padding:30px 24px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  .main-message h2{color:#0c101a;margin-bottom:14px;}
+  .main-message strong{font-weight:800; color:var(--ink);}
+
+  .footer-note{text-align:center; color:var(--muted); margin-top:26px; font-size:13px}
+
+  @media (max-width: 960px){.span-6{grid-column: span 12}.brandbar{top:24px; left:6vw}.brandbar img.logo{height:48px}.hero{height:60vh; padding:80px 6vw 50px}}
+</style>
+</head>
+<body>
+
+  <button id="screenshot-btn">📸</button>
+
+  <header class="hero" id="capture-area">
+    <div class="brandbar" aria-label="FLIX Agency">
+      <img class="logo" src="images/flix.png" alt="FLIX Agency logo" />
+      <div>
+        <div class="wordmark">FLIX</div>
+        <div class="agency">AGENCY</div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <span class="pill">Creative brief • University of Greenwich</span>
+      <h1>“Bringing the world together.”</h1>
+      <p class="kicker">A world-class experience that feels like home — where wellbeing and ambitions come first.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid" id="content-area">
+
+      <section class="card span-6">
+        <h2>Client Background</h2>
+        <p>The University of Greenwich seeks to grow international applications by positioning itself as a caring, globally-connected community with strong student support (financial advice, employability via Target Connect, accommodation). The university is uniquely located within a <strong>UNESCO World Heritage Site</strong> and is home to the <strong>Prime Meridian</strong>, making it both historically rich and globally symbolic.</p>
+      </section>
+
+      <section class="card span-6">
+        <h2>Project Objective</h2>
+        <p>Increase qualified international applications and Open Day bookings for the 2025/26 intake.</p>
+      </section>
+
+      <section class="card span-6">
+        <h2>Target Audience</h2>
+        <ul>
+          <li><strong>Primary Audience:</strong> International students aged 17+</li>
+          <li class="em">Seeking diversity, opportunity, independence & connections. Value support, safety and career outcomes.</li>
+        </ul>
+      </section>
+
+      <section class="card span-6">
+        <h2>Key Consumer Benefit</h2>
+        <p>A world-class education that feels like home: a welcoming community, iconic campus, and practical support that turns ambition into outcomes.</p>
+      </section>
+
+      <section class="main-message span-12">
+        <h2>Main Message</h2>
+        <p><strong>At the University of Greenwich we bring the world together</strong> — offering a world-class education, a caring community, and opportunities that travel with you wherever you go.</p>
+      </section>
+
+      <section class="card span-6">
+        <h2>Competitors</h2>
+        <div class="chips">
+          <span class="chip">University of Westminster</span>
+          <span class="chip">London South Bank University</span>
+          <span class="chip">UCL</span>
+          <span class="chip">Middlesex University</span>
+         
+        </div>
+      </section>
+
+      <section class="card span-6">
+        <h2>Attitude</h2>
+        <p class="em">Formal yet warm; informative, honest, loyal and approachable.</p>
+      </section>
+
+      <section class="card span-6">
+        <h2>Distribution</h2>
+        <p>Digital-first: always-on social (Instagram, TikTok, YouTube), paid + organic. 3–5 posts/week with student-led content, alumni reels, campus life and support explainers.</p>
+      </section>
+
+      <section class="card span-6">
+        <h2>Call to Action</h2>
+        <p><strong>Apply now</strong> • Book an Open Day • Ask a Student</p>
+      </section>
+
+    </div>
+
+    <p class="footer-note">© FLIX Agency — Creative Brief Template (No budget required for this module)</p>
+  </main>
+
+<script>
+  document.getElementById("screenshot-btn").addEventListener("click", () => {
+    html2canvas(document.body, {scrollY: -window.scrollY, scale: 2}).then(canvas => {
+      const link = document.createElement("a");
+      link.download = "FLIX_Creative_Brief.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  });
+</script>
+
+</body>
+</html>
